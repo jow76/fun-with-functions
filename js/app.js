@@ -52,8 +52,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    let sum2 = a + b + c;
-    let prod2 = a * b * c;
+    let sum2 = sum(a, sum(b,c)[0])[0]
+    let prod2 = multiply(a, multiply(b, c)[0])[0]
     let str3a = a + " and " + b + " and " + c + " sum to " + sum2 + ".";
     let str3b = "The product of " + a + " and " + b + " and " + c + " is " + prod2 + ".";
     return [sum2, prod2, str3a, str3b];
@@ -102,7 +102,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) {
     let prod3 = multiply(multArr[0], multiply(multArr[1],multArr[2])[0])[0]
-    let str5 = "The numbers " + multArr + " have a product of 24."
+    let str5 = "The numbers " + multArr + " have a product of " + prod3 + "."
     return [prod3, str5];
 }
 
@@ -131,10 +131,14 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+    let prod4 = testDynamicArray[0];
+    for(let i=0; i<dynamicArray.length; i++){
+        prod4 = multiply(prod4, dynamicArray[i])[0] 
+    }
+    return [prod4, "The numbers " + dynamicArray + " have a product of " + prod4 + "."]
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
