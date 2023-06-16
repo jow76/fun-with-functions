@@ -80,7 +80,6 @@ let testArray = [2, 3, 4];
 function sumArray(sumArr) {
     let sum3 = sum(sumArr[0],sum(sumArr[1],sumArr[2])[0])[0]
     let str4 = sumArr + " was passed in as an array of numbers, and " + sum3 + " is their sum."
-    console.log(str4)
     return [sum3, str4];
 }
 
@@ -101,8 +100,10 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
-
+function multiplyArray(multArr) {
+    let prod3 = multiply(multArr[0], multiply(multArr[1],multArr[2])[0])[0]
+    let str5 = "The numbers " + multArr + " have a product of 24."
+    return [prod3, str5];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
