@@ -11,9 +11,7 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { //eslint-disable-line
     let sum1 = a + b
     let str1 = "The sum of " + a + " and " + b + " is " + sum1 + "."
-    let nums1 = [sum1, str1]
-    console.log(nums1)
-    return nums1;
+    return [sum1, str1];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -33,9 +31,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
     let prod1 = a * b
     let str2 = "The product of " + a + " and " + b + " is " + prod1 + "."
-    let nums2 = [prod1, str2]
-    console.log(nums2)
-    return nums2;
+    return [prod1, str2];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -60,13 +56,11 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
     let prod2 = a * b * c;
     let str3a = a + " and " + b + " and " + c + " sum to " + sum2 + ".";
     let str3b = "The product of " + a + " and " + b + " and " + c + " is " + prod2 + ".";
-    let nums3 = [sum2, prod2, str3a, str3b]
-    console.log(nums3)
-    return nums3;
+    return [sum2, prod2, str3a, str3b];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -81,10 +75,13 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-let testArray = [2, 3, 4]; //eslint-disable-line
+let testArray = [2, 3, 4];
 
-function sumArray(sumArr) { //eslint-disable-line
-
+function sumArray(sumArr) {
+    let sum3 = sum(sumArr[0],sum(sumArr[1],sumArr[2])[0])[0]
+    let str4 = sumArr + " was passed in as an array of numbers, and " + sum3 + " is their sum."
+    console.log(str4)
+    return [sum3, str4];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
